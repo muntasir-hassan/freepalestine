@@ -1,17 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Palestine - Eid Project</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="freepalestine.png" />
   </head>
 
   <body>
     <!-- ================= NAVBAR ================= -->
     <header>
       <nav class="navbar">
-        <div class="logo">Free Palestine</div>
+        <div class="logo">
+  <img src="freepalestine.png" alt="Free Palestine Logo" />
+</div>
 
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
@@ -31,7 +34,7 @@
     <main>
       <section class="hero" id="hero">
         <img
-          src="/photorealistic-kid-refugee-camp.jpg"
+          src="/freepalestine\photorealistic-kid-refugee-camp.jpg"
           alt="Refugee child"
           class="mobile-img"
         />
@@ -103,15 +106,6 @@
 
     <!-- ================= SCRIPT ================= -->
     <script>
-      function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("active");
-      }
-
-      function copyNumber() {
-        const number = document.getElementById("bkash-number").innerText;
-        navigator.clipboard.writeText(number);
-        alert("bKash number copied!");
-      }
       const menu = document.querySelector(".nav-links");
       const toggle = document.querySelector(".menu-toggle");
 
@@ -119,19 +113,26 @@
         menu.classList.toggle("active");
       }
 
-      // Auto close when clicking any link
+      // close menu on link click
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
           menu.classList.remove("active");
         });
       });
 
-      // Optional: close when clicking outside menu
+      // close when clicking outside
+
       document.addEventListener("click", (e) => {
         if (!menu.contains(e.target) && !toggle.contains(e.target)) {
           menu.classList.remove("active");
         }
       });
+
+      function copyNumber() {
+        const number = document.getElementById("bkash-number").innerText;
+        navigator.clipboard.writeText(number);
+        alert("bKash number copied!");
+      }
     </script>
   </body>
 </html>
